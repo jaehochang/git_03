@@ -34,7 +34,6 @@
 							자료</th>
 					</tr>
 					<tr>
-						<td style="background-color: #eeeeee; text-align=center;">
 						<th style="background-color: #eeeeee; text-align=center;">번호
 						<th style="background-color: #eeeeee; text-align=center;">이름
 						<th style="background-color: #eeeeee; text-align=center;">메세지
