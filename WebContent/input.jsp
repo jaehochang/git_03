@@ -28,12 +28,12 @@ aria-expanded="false">
 <div class="container bootstrap snippet">
 <div class="row">
 <div class="form-group col-xs-10">
-<label class="form-group">이름</label><input type=text class="form-control" id="name">
+<label class="form-group">이름</label><input type=text class="form-control" id="name" name="name">
 </div>
 </div>
 <div class="row">
 <div class="form-group col-xs-10">
-<label class="form-group">메세지</label><input type=text class="form-control" id="msg">
+<label class="form-group">메세지</label><input type=text class="form-control" id="msg" name="msg">
 </div>
 </div>
 <div class="form-group col-xs-2">
