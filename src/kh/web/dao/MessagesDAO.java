@@ -13,7 +13,7 @@ public class MessagesDAO {
 
 	public List<MessagesDTO> getAllData() throws Exception {
 		Connection conn = DBUtils.getConnection();
-		String sql = "select * from messages";
+		String sql = "select * from message";
 		PreparedStatement pstat = conn.prepareStatement(sql);
 		ResultSet rs = pstat.executeQuery();
 		List<MessagesDTO> result = new ArrayList<>();
@@ -34,7 +34,7 @@ public class MessagesDAO {
 
 	public int insertMessage(String name, String message) throws Exception {
 		Connection conn = DBUtils.getConnection();
-		String sql = "insert into messages values (message_id_seq.nextval,?,?)";
+		String sql = "insert into message values (message_id_seq.nextval,?,?)";
 		PreparedStatement pstat = conn.prepareStatement(sql);
 		pstat.setString(1, name);
 		pstat.setString(2, message);
