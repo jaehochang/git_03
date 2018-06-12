@@ -34,7 +34,7 @@ public class MessagesDAO {
 
 	public int insertMessage(String name, String message) throws Exception {
 		Connection conn = DBUtils.getConnection();
-		String sql = "insert messages into values (message_id_seq.nextval,?,?)";
+		String sql = "insert into messages values (message_id_seq.nextval,?,?)";
 		PreparedStatement pstat = conn.prepareStatement(sql);
 		pstat.setString(1, name);
 		pstat.setString(2, message);
