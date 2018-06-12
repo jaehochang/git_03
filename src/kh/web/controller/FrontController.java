@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.web.dao.MessagesDAO;
+import kh.web.dto.MessagesDTO;
+
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,9 +31,9 @@ public class FrontController extends HttpServlet {
 		System.out.println("RequestURI : " + requestURI);
 		System.out.println("ContextPath : " + contextPath);
 
-		String command = requestURI.substring(contextPath.length()); // output.bo¸¦ ¾ò¾î¿È
+		String command = requestURI.substring(contextPath.length()); // output.boï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-		System.out.println(command); // ½ÇÁ¦ Ä¿¸Çµå¸¦ ¾ò¾î¿È
+		System.out.println(command); // ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½Çµå¸¦ ï¿½ï¿½ï¿½ï¿½
 
 		MessagesDAO dao = new MessagesDAO();
 		boolean isRedirect = true;
@@ -43,10 +46,10 @@ public class FrontController extends HttpServlet {
 			
 		} else if (command.equals("/input.do")) {
 			String name = request.getParameter("name");
-			String msg = request.getParameter("msg");
+			String message = request.getParameter("msg");
 			System.out.println(name);
-			System.out.println(msg);
-			int result = dao.insertInfo(name, msg);
+			System.out.println(message);
+			int result = dao.insertMessage(name, message);
 			request.setAttribute("result", result);
 			isRedirect = false;
 			dst = "inputView.jsp";
@@ -58,7 +61,7 @@ public class FrontController extends HttpServlet {
 		} else {
 			response.sendRedirect(dst);
 		}
-		// redirect¸¦ ÇØ¾ßÇÒ¶§ request¸¦ ÇÏ¸é Âü»ç°¡ ³­´Ù.
+		// redirectï¿½ï¿½ ï¿½Ø¾ï¿½ï¿½Ò¶ï¿½ requestï¿½ï¿½ ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ç°¡ ï¿½ï¿½ï¿½ï¿½.
 
 	} catch(Exception e) {
 		e.printStackTrace();
