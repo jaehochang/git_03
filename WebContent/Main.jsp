@@ -18,7 +18,7 @@ $(document).ready(function(){
 	})
 	
 	 $("#toOutput").click(function(){
-		$(location).attr("href","outputView.jsp");
+		$(location).attr("href","output.do");
 		
 		
 	}) 
